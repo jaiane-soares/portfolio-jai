@@ -12,8 +12,8 @@ export default function Certificate() {
       <div className="cert-container">
 
         <hgroup className="section-title" id="cert-title">
-          <span>Meu</span>
-          <span className="accent"> Certificado</span>
+          <span>Minhas</span>
+          <span className="accent">Certificações</span>
         </hgroup>
 
         <div className="cert-card">
