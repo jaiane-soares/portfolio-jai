@@ -2,9 +2,9 @@ import ProjectCard from './ProjectCard';
 import '../styles/Projects.css';
 
 
-import imgSopro from '/src/assets/Sopro.png';
-import imgEchoes from '/src/assets/Echoes.png';
-import imgSentinela from '/src/assets/Sentinela.png';
+import imgSopro from '../assets/Sopro.png';
+import imgEchoes from '../assets/Echoes.png';
+import imgSentinela from '../assets/Sentinela.png';
 
 
 const PROJECTS = [
