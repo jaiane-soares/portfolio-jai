@@ -1,10 +1,34 @@
 import ProjectCard from './ProjectCard';
 import '../styles/Projects.css';
 
+
+import imgSopro from '../assets/Sopro.png';
+import imgEchoes from '../assets/Echoes.png';
+import imgSentinela from '../assets/Sentinela.png';
+
+
 const PROJECTS = [
-  { id: 1, title: 'SOPRO', type: 'Web + Hardware', imgSrc: '/src/assets/sopro.png' },
-  { id: 2, title: 'ECHOES OF KINDENESS', type: 'Backend', imgSrc: '/src/assets/echoes.png' },
-  { id: 3, title: 'SentinelaAI', type: 'Backend ', imgSrc: '/src/assets/sentinela.png' },
+  { 
+    id: 1, 
+    title: 'SOPRO', 
+    type: 'Web + Hardware', 
+    imgSrc: imgSopro, 
+    githubUrl: 'https://github.com/SOPRO-equipe1' 
+  },
+  { 
+    id: 2, 
+    title: 'ECHOES OF KINDENESS', 
+    type: 'Backend', 
+    imgSrc: imgEchoes, 
+    githubUrl: 'https://github.com/jaiane-soares/echoes-kindness' 
+  },
+  { 
+    id: 3, 
+    title: 'SentinelaAI', 
+    type: 'Backend ', 
+    imgSrc: imgSentinela, 
+    githubUrl: 'https://github.com/jaiane-soares/sentinela-ai' 
+  },
 ];
 
 const TAGS = ['#Web', '#Backend', '#Hardware'];
@@ -31,6 +55,7 @@ export default function Projects() {
           </nav>
         </div>
 
+        {/* 3. PASSANDO A URL PARA O CARD */}
         <div className="projects-grid">
           {PROJECTS.map((project) => (
             <ProjectCard
@@ -38,6 +63,7 @@ export default function Projects() {
               title={project.title}
               type={project.type}
               imgSrc={project.imgSrc}
+              githubUrl={project.githubUrl} // Nova propriedade passada para o componente
             />
           ))}
         </div>

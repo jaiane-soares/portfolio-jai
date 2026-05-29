@@ -18,10 +18,10 @@ export default function Hero() {
           
           <p className="hero-description">
             Seja bem-vindo ao meu portfólio! Sou desenvolvedora de software focada em 
-            engenharia de sistemas robustos e eficientes. Utilizo Java e Spring Boot para 
-            arquitetar soluções de backend sólidas e seguras, integradas com bancos de dados 
+            engenharia de sistemas. Utilizo Java e Spring Boot para 
+            arquitetar soluções de backend, integradas com bancos de dados 
             MySQL e PostgreSQL. Também aplico Python para análise de dados e automação de processos. 
-            No ecossistema frontend, desenvolvo interfaces funcionais e dinâmicas utilizando 
+            No ecossistema frontend, desenvolvo interfaces funcionais 
             HTML, CSS e JavaScript. Explore os meus projetos abaixo para conhecer a fundo a 
             minha stack técnica e a arquitetura das aplicações que desenvolvo.
           </p>

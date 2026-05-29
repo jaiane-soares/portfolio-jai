@@ -1,6 +1,6 @@
 import '../styles/Certificate.css';
 
-const CERT_SRC = '/src/assets/azure.jpeg'; 
+const CERT_SRC = '/src/assets/Azure.jpeg'; 
 
 function Placeholder({ label }) {
   return <div className="cert-placeholder">{label}</div>;
