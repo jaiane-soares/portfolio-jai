@@ -1,0 +1,77 @@
+.projects-section {
+  padding: var(--section-gap) 0;
+}
+
+.projects-container {
+  width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* Topo da seção (Título e Tags) */
+.projects-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.projects-subtitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--clr-white-70);
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.projects-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* O Grid de Cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Rodapé / Botão Saber Mais */
+.projects-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.more-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.more-projects-btn .arrow {
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.more-projects-btn:hover .arrow {
+  transform: translateX(4px); /* Dá aquele efeito massa da setinha correndo pro lado no hover */
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .projects-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 560px) {
+  .projects-grid { 
+    grid-template-columns: 1fr; 
+  }
+}

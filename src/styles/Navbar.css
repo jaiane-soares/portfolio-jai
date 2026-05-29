@@ -1,0 +1,97 @@
+.nav-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: var(--clr-bg);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--clr-white);
+  text-decoration: none;
+}
+
+/* Menu de Navegação - Desktop */
+.nav-menu ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-menu a {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--clr-white);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-menu a:hover { 
+  color: var(--clr-accent); 
+}
+
+/* Botão Mobile Toggle simplificado */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--clr-white);
+  font-size: 24px; /* Garante que o ícone de texto fique legível */
+  line-height: 1;
+}
+
+/* Telas Mobile */
+@media (max-width: 768px) {
+  .nav-toggle { 
+    display: flex; 
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--clr-bg);
+    padding: 16px 0;
+    border-top: 1px solid rgba(0, 168, 205, 0.2);
+  }
+
+  .nav-menu.is-open { 
+    display: block; 
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-menu li { 
+    width: 100%; 
+    text-align: center; 
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+}

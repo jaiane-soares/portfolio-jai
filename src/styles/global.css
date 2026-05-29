@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ── Variáveis ── */
+:root {
+  --clr-bg:        #14181a;
+  --clr-accent:    #00a8cd;
+  --clr-accent-dim: rgba(0, 168, 205, 0.54);
+  --clr-white:     #ffffff;
+  --clr-white-80:  rgba(255, 255, 255, 0.80);
+  --clr-white-70:  rgba(255, 255, 255, 0.70);
+  --clr-white-72:  rgba(255, 255, 255, 0.72);
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  --nav-height: 70px;
+  --section-gap: 80px;
+  --container-width: min(1056px, 90vw);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-white);
+  font-family: var(--font-heading);
+  min-height: 100vh;
+}
+
+img { display: block; max-width: 100%; }
+a   { color: inherit; text-decoration: none; }
+
+/* ── Utilitário: placeholder de imagem ── */
+.img-placeholder {
+  background: linear-gradient(135deg, rgba(0,168,205,0.18) 0%, rgba(0,168,205,0.04) 100%);
+  border: 1.5px dashed rgba(0,168,205,0.35);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(0,168,205,0.6);
+  text-align: center;
+  padding: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Utilitário: divisor ── */
+.divider {
+  width: min(700px, 80vw);
+  height: 1px;
+  border: none;
+  background: linear-gradient(90deg, var(--clr-accent), rgba(0,168,205,0));
+  margin: 0 auto;
+}
+
+/* ── Seção genérica ── */
+.section-container {
+  width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--section-gap) 0;
+}
+
+/* ── Título de seção padrão ── */
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.section-title .accent { color: var(--clr-accent); }
+
+/* ── Tag / badge ── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: 2px;
+  background-color: var(--clr-accent);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--clr-white);
+}
+
+/* ── Botão primário ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  border-radius: 5px;
+  background-color: var(--clr-accent);
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--clr-white);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn-primary:hover { opacity: 0.85; }
+
+/* ── "Saber mais" link ── */
+.saber-mais-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 2px;
+  background-color: var(--clr-accent);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--clr-white);
+  transition: opacity 0.2s;
+}
+.saber-mais-link:hover { opacity: 0.85; }
+.saber-mais-link svg { width: 18px; height: 18px; flex-shrink: 0; }

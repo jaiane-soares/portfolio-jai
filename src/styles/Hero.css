@@ -1,0 +1,276 @@
+/* ==========================================================================
+   RESET E ESTRUTURA BASE (BLINDADO CONTRA QUEBRAS)
+   ========================================================================== */
+.hero-section {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  background-color: #0b0c10; 
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-container {
+  width: var(--container-width);
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide a tela no meio exato */
+  gap: 60px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   LADO ESQUERDO: TEXTO E APRESENTAÇÃO
+   ========================================================================== */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 700;
+  color: var(--clr-white);
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.hero-title .name-highlight {
+  display: block;
+}
+
+.hero-subtitle {
+  display: block;
+  font-size: clamp(20px, 2vw, 26px);
+  color: #00a8cd; 
+  font-weight: 600;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  text-align: justify;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-icon-only {
+  background: transparent;
+  border: 1px solid rgba(0, 168, 205, 0.3);
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--clr-white);
+  border-bottom: 1px solid var(--clr-white-70);
+  padding-bottom: 2px;
+}
+
+/* ==========================================================================
+   LADO DIREITO: COMPOSIÇÃO VISUAL (BONECOS E MAPA DE SITES)
+   ========================================================================== */
+.hero-visual-compose {
+  position: relative; /* Mantém os absolutos presos dentro desse quadrado */
+  width: 100%;
+  height: 600px; /* Altura controlada para caber todo o ecossistema */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Círculos translúcidos de efeito visual do fundo */
+.bg-glow-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+  pointer-events: none;
+}
+.circle-1 { width: 420px; height: 420px; top: 5%; right: -5%; }
+.circle-2 { width: 300px; height: 300px; bottom: 0; left: -10%; }
+
+/* Container das ilustrações de personagem */
+.hero-characters {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3; /* Fica acima dos círculos e abaixo da maioria dos cards */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.char-img {
+  max-height: 520px; 
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8));
+}
+.char-falling { transform: rotate(-4deg); margin-left: -20px; }
+.char-thinking { transform: scale(1.08); margin-right: -20px; }
+
+/* ==========================================================================
+   INTERATIVIDADE E COORDENADAS DOS ÍCONES (SKILL ICONS)
+   ========================================================================== */
+.tech-node {
+  position: absolute;
+  width: 64px;       /* Tamanho robusto cravado por segurança */
+  height: 64px;      /* Tamanho robusto cravado por segurança */
+  z-index: 4;
+  box-sizing: border-box;
+  animation: float-soft 4.5s ease-in-out infinite;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.8));
+  cursor: help;
+}
+
+.tech-node img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.tech-node:hover img {
+  transform: scale(1.1);
+}
+
+.tech-node:hover {
+  animation-play-state: paused; /* Trava a flutuação para o usuário conseguir ler */
+}
+
+/* Tooltip (Balão de Informações) */
+.tech-node::after {
+  content: attr(data-level); 
+  position: absolute;
+  bottom: 115%; 
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #14161a;
+  color: #00a8cd; 
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 168, 205, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 99;
+}
+
+/* Setinha do balão */
+.tech-node::before {
+  content: '';
+  position: absolute;
+  bottom: 102%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: #14161a transparent transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 99;
+}
+
+.tech-node:hover::after,
+.tech-node:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Mapeamento Geográfico das Tecnologias ── */
+.tech-node.spring   { top: 8%; left: 5%; animation-delay: 0s; }
+.tech-node.html     { top: 28%; left: -5%; animation-delay: 0.8s; }
+.tech-node.python   { bottom: 32%; left: 4%; animation-delay: 1.4s; }
+
+.tech-node.azure    { bottom: 48%; left: 34%; animation-delay: 0.4s; z-index: 2; } /* Fica por trás do boneco */
+
+.tech-node.java     { top: 16%; right: 40%; animation-delay: 0.6s; }
+.tech-node.postgres { top: 6%; right: 14%; animation-delay: 1.2s; }
+.tech-node.js       { top: 20%; right: -4%; animation-delay: 0.2s; }
+.tech-node.mysql    { bottom: 44%; right: -2%; animation-delay: 1.8s; }
+.tech-node.css      { bottom: 22%; right: 12%; animation-delay: 1s; }
+
+/* Animação Suave */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ==========================================================================
+   RESPONSIVO INTEGRADO (MOBILE/TABLET)
+   ========================================================================== */
+@media (max-width: 990px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+  .hero-description {
+    margin: 0 auto 28px;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-visual-compose {
+    max-width: 500px;
+    margin: 0 auto;
+    height: 460px;
+  }
+  .char-img { max-height: 380px; }
+  
+  .tech-node { 
+    width: 48px; 
+    height: 48px; 
+  }
+  .tech-node::after,
+  .tech-node::before {
+    display: none; /* Desativa tooltips em telas de toque por usabilidade */
+  }
+  
+  /* Compactação de coordenadas mobile */
+  .tech-node.spring   { top: 6%; left: 2%; }
+  .tech-node.html     { top: 24%; left: -6%; }
+  .tech-node.python   { bottom: 25%; left: -2%; }
+  .tech-node.azure    { bottom: 44%; left: 32%; }
+  .tech-node.java     { top: 14%; right: 42%; }
+  .tech-node.postgres { top: 4%; right: 16%; }
+  .tech-node.js       { top: 18%; right: -6%; }
+  .tech-node.mysql    { bottom: 38%; right: -4%; }
+  .tech-node.css      { bottom: 18%; right: 10%; }
+}

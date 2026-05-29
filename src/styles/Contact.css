@@ -1,0 +1,100 @@
+.contact-section {
+  padding: var(--section-gap) 0 100px;
+}
+
+.contact-container {
+  width: var(--container-width);
+  margin: 0 auto;
+}
+
+.contact-subtitle {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.6vw, 20px);
+  font-weight: 300;
+  color: var(--clr-white-70);
+  margin-bottom: 48px;
+}
+
+/* O bloco do formulário */
+.contact-form {
+  background: linear-gradient(257deg, rgba(217,217,217,0.08), rgba(217,217,217,0));
+  border: 1px solid rgba(0,168,205,0.2);
+  border-radius: 12px;
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Estrutura de linhas e campos (reutilizável) */
+.form-group-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Estilos de tipografia e elementos globais do form */
+.form-field label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--clr-white-70);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.form-field input,
+.form-field textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--clr-accent);
+  padding: 8px 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--clr-white);
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  resize: none;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(255,255,255,0.25);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-bottom-color: rgba(0, 168, 205, 0.9);
+}
+
+/* Customização cirúrgica para a Textarea */
+.form-field.full-width textarea {
+  border: 1px solid var(--clr-accent);
+  border-radius: 4px;
+  padding: 12px;
+  min-height: 140px;
+}
+
+.form-field.full-width textarea:focus {
+  border-color: rgba(0, 168, 205, 0.9);
+}
+
+/* Área do botão */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Responsivo */
+@media (max-width: 680px) {
+  .contact-form { padding: 28px 20px; }
+  .form-group-row { grid-template-columns: 1fr; }
+}

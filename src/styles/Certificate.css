@@ -1,0 +1,48 @@
+.cert-section {
+  padding: var(--section-gap) 0;
+}
+
+.cert-container {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* O card do certificado */
+.cert-card {
+  width: 100%;
+  max-width: 680px;
+  aspect-ratio: 16 / 11;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 168, 205, 0.25);
+  box-shadow:
+    0 0 0 1px rgba(0, 168, 205, 0.08),
+    0 16px 48px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 0 0 1px rgba(0, 168, 205, 0.2),
+    0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Imagem interna e Placeholder */
+.cert-card img,
+.cert-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsivo limpo */
+@media (max-width: 680px) {
+  .cert-card { 
+    max-width: 100%; 
+  }
+}
