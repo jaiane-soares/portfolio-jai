@@ -3,18 +3,18 @@
   width: 100%;
 }
 
-/* Garanta que o container tenha espaço para espalhar os itens */
+
 .skills-container {
   width: var(--container-width);
-  max-width: 1200px; /* Evita que o grid estique infinito em telas gigantes */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* O segredo está aqui: Forçar o Grid a criar colunas automáticas */
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Troquei para auto-fill para alinhar melhor */
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
   gap: 24px;
   width: 100%;
 }
@@ -27,18 +27,18 @@
   justify-content: center;
   gap: 12px;
   padding: 24px 12px;
-  background: linear-gradient(218deg, rgba(0,168,205,0.1) 0%, rgba(0,168,205,0) 83%);
-  border: 1px solid rgba(0,168,205,0.15);
+  background: linear-gradient(218deg, rgba(205, 0, 0, 0.1) 0%, rgba(0,168,205,0) 83%);
+  border: 1px solid rgba(205, 0, 0, 0.15);
   border-radius: 10px;
   transition: border-color 0.25s, transform 0.25s;
 }
 
 .skill-card:hover {
-  border-color: rgba(0,168,205,0.5);
+  border-color: rgba(205, 0, 0, 0.5);
   transform: translateY(-3px);
 }
 
-/* Container do ícone arrumado */
+
 .skill-icon {
   width: 56px;
   height: 56px;
@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box; /* Essencial para o padding não inflar o tamanho do ícone */
+  box-sizing: border-box; 
 }
 
 .skill-icon img {
@@ -69,13 +69,13 @@
 /* Responsivo para telas pequenas */
 @media (max-width: 600px) {
   .skills-grid { 
-    grid-template-columns: repeat(3, 1fr); /* Força 3 colunas em celulares */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 16px;
   }
 }
 
 @media (max-width: 400px) {
   .skills-grid { 
-    grid-template-columns: repeat(2, 1fr); /* Se a tela for muito pequena, cai para 2 colunas */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }

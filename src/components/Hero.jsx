@@ -1,7 +1,7 @@
 import '../styles/Hero.css';
 
 
-// Importação correta de assets no React (Vite/Webpack)
+
 import CHAR_LEFT from '../assets/JaiCaindo.png'; 
 import CHAR_RIGHT from '../assets/Jaii.png';
 

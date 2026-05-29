@@ -19,7 +19,7 @@
 /* O bloco do formulário */
 .contact-form {
   background: linear-gradient(257deg, rgba(217,217,217,0.08), rgba(217,217,217,0));
-  border: 1px solid rgba(0,168,205,0.2);
+  border: 1px solid rgba(124, 5, 5, 0.2);
   border-radius: 12px;
   padding: 40px 48px;
   display: flex;
@@ -72,7 +72,7 @@
 
 .form-field input:focus,
 .form-field textarea:focus {
-  border-bottom-color: rgba(0, 168, 205, 0.9);
+  border-bottom-color: rgba(129, 7, 7, 0.9);
 }
 
 /* Customização cirúrgica para a Textarea */
@@ -84,7 +84,7 @@
 }
 
 .form-field.full-width textarea:focus {
-  border-color: rgba(0, 168, 205, 0.9);
+  border-color: rgba(128, 5, 5, 0.9);
 }
 
 /* Área do botão */

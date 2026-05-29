@@ -63,7 +63,7 @@ export default function Contact() {
               <label htmlFor="phone">Numero telefone</label>
               <input
                 id="phone" name="phone" type="tel"
-                placeholder="+55 11 9 0000-0000"
+                placeholder="+55 11 9 6148-1000"
                 value={form.phone} onChange={handleChange}
               />
             </div>

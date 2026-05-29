@@ -3,7 +3,7 @@ import '../styles/Projects.css';
 
 
 import imgSopro from '/src/assets/sopro.png';
-import imgEchoes from '/src/assets/schoes.png';
+import imgEchoes from '/src/assets/echoes.png';
 import imgSentinela from '/src/assets/sentinela.png';
 
 
@@ -55,7 +55,7 @@ export default function Projects() {
           </nav>
         </div>
 
-        {/* 3. PASSANDO A URL PARA O CARD */}
+        
         <div className="projects-grid">
           {PROJECTS.map((project) => (
             <ProjectCard
@@ -63,7 +63,7 @@ export default function Projects() {
               title={project.title}
               type={project.type}
               imgSrc={project.imgSrc}
-              githubUrl={project.githubUrl} // Nova propriedade passada para o componente
+              githubUrl={project.githubUrl}
             />
           ))}
         </div>

@@ -1,6 +1,6 @@
 import '../styles/AboutMe.css';
 
-const PHOTO_SRC = '/src/assets/JaiChibi.png';
+const PHOTO_SRC = '/src/assets/jaiChibi.png';
 
 function Placeholder({ label }) {
   return <div className="photo-placeholder">{label}</div>;
@@ -18,7 +18,7 @@ export default function AboutMe() {
             : <Placeholder label="Foto de perfil" />}
         </div>
 
-        {/* Texto */}
+        
         <div className="about-details">
           <hgroup className="section-title" id="about-title">
             <span>Sobre</span>
@@ -33,7 +33,7 @@ export default function AboutMe() {
             </p>
             <p>
               Sou feita da paciência exigida para resolver um bom Sudoku, do silêncio
-              focado acompanhado por uma xícara de café sempre presente, e do fascínio
+              focado acompanhado por uma xícara de café, e do fascínio
               pela literatura russa. Para mim, destrinchar um sistema
               complexo, encaixar a última peça de um puzzle lógico ou mergulhar nas
               páginas de um romance denso são caminhos que partem do mesmo lugar: uma
